@@ -9,9 +9,9 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract Ocean is ERC721, ERC721URIStorage, Ownable {
     uint256 private _nextTokenId;
 
-    constructor()
+    constructor(address initialOwner)
         ERC721("Ocean", "OCE")
-        Ownable(msg.sender)
+        Ownable(initialOwner)
     {}
 
     function _baseURI() internal pure override returns (string memory) {
